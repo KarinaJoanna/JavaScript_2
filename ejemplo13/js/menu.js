@@ -9,9 +9,9 @@ class Boton {
     this.contenedorElemento.append(boton);
     }
     onClick(){
-    console.log('Hiciste clic en: '+this.texto);
-    document.dispatchEvent(new CustomEvent('boton-click'));
-    }
+        const eventInfo = { nombreBoton: this.texto }; document.dispatchEvent(new CustomEvent('boton-click',{detail:
+        eventInfo}));
+        }
     }
     
     class Menu {
@@ -26,10 +26,9 @@ class Boton {
         ];
         document.addEventListener('boton-click',this.mostrarBotonClick);
         }
-        mostrarBotonClick(nombreBoton){
+        mostrarBotonClick(event){
             console.log('Notificacion al menu');
-            const nombreBoton = event.currentTarget.textContent;
-        this.estatus.textContent = 'Clic en '+nombreBoton;
+            const nombreBoton = event.detail.nombreBoton; this.estatus.textContent = 'Clic en '+nombreBoton;
             }
         }
  
