@@ -7,9 +7,9 @@ class Album {
         this.modal = new Modal(contenedor, photo_list);
         this.imagesSrc = photo_list;
         this.onThumbnailClick = this.onThumbnailClick.bind(this)
-        this.loadImages();
+        this.cargarimg();
     }
-    loadImages() {
+    cargarimg() {
         for (let i = 0; i < this.imagesSrc.length; i++) {
             const photoSrc = this.imagesSrc[i];
             const image = new Image(photoSrc, i);

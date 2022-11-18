@@ -12,7 +12,7 @@ class Modal {
         document.body.classList.remove('no-scroll');
         this.contenedor.classList.add('hidden');
         this.contenedor.innerHTML = '';
-        document.removeEventListener("keydown", this.nextPhoto)
+        document.removeEventListener('keydown', this.nextPhoto)
     }
     nextPhoto(event) {
         if (event.key === 'Escape') {
