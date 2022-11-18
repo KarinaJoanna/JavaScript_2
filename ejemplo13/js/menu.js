@@ -8,10 +8,12 @@ class Menu {
             new Boton(this.botonContenedor, 'B'),
             new Boton(this.botonContenedor, 'C')
         ];
-        document.addEventListener('boton-click', this.mostrarBotonClick);
+        document.addEventListener('boton-click',this.mostrarBotonClick);
     }
-    mostrarBotonClick(event) {
+    mostrarBotonClick(event){
         console.log('Notificacion al menu');
-        const nombreBoton = event.detail.nombreBoton; this.estatus.textContent = 'Clic en ' + nombreBoton;
+        const nombreBoton = event.detail.nombreBoton;
+        this.estatus.textContent = 'Clic en '+nombreBoton;
     }
 }
+const menu = new Menu();
